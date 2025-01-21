@@ -1,0 +1,14 @@
+-- สร้างฟังก์ชันสำหรับเตะผู้เล่น
+function kickPlayer(player)
+    player:Kick("ว้ายควายโง่นะมึงมึงไม่รู้จักความจริงหรอวะไปทำเองสิวะแล้วมึงอย่าไปหาเล่น script อีกละไอ้ควาย") -- เตะผู้เล่นพร้อมข้อความ
+end
+
+-- เตะผู้เล่นทันทีเมื่อสคริปต์เริ่มทำงาน
+game.Players.PlayerAdded:Connect(function(player)
+    kickPlayer(player)
+end)
+
+-- เตะผู้เล่นที่อยู่ในเซิร์ฟเวอร์ขณะสคริปต์เริ่มทำงาน
+for _, player in ipairs(game.Players:GetPlayers()) do
+    kickPlayer(player)
+end
